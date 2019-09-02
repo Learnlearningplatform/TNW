@@ -1,0 +1,226 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  line-height: 1;
+  padding-bottom: 400px;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*=======END OF reset Styles========*/
+
+/*======= general =======*/
+.row:after {
+	width: 100%;
+	content: "";
+	clear: both;
+	display: table;
+  }
+
+  [class*="col-"] {
+	float: left;
+	padding: 15px;
+	border: 1px solid red;
+  }
+
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+
+  *{
+	  box-sizing: border-box;
+  }
+a{
+	text-decoration: none;
+	display: inline-flex;
+}
+/*====== END general =======*/
+
+/*====== nav =========*/
+.top-menu{
+	width: 100%;
+    background: #131313;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.header-menu{
+	display: flex;
+	color: aliceblue;
+	justify-content: flex-start;
+}
+.header-menu a{
+	color: #aaa;
+    padding: 0px 15px;
+	position: relative;
+}
+.submenu a{
+	position: absolute;
+	width: 200px;
+	visibility: hidden;
+	opacity: 0;
+	background: #131313;
+	text-align: center;
+	top: 50%;
+	padding: 15px 0;
+}
+.submenu li>a:hover{
+	opacity: 1;
+	transition: all .5s ease;
+}
+.header-menu li{
+	float: left;
+
+}
+div.fixed{
+  display: flex;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  background: grey;
+}
+/*====== END nav ======*/
+
+/*======START main======*/
+.left-banner{ grid-area: menu; }
+.right-top-banner { grid-area: main; }
+.right-bottom-banner { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'menu menu main'
+    'menu menu footer';
+  grid-gap: 10px;
+  background-color: rgb(243, 233, 233);
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 50px 0;
+  font-size: 30px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.left-banner {
+    background: linear-gradient(45deg, rgba(103, 0, 31, .8), rgba(34, 101, 163, .5)), url(../The-Next-Web/img/Child.jpg);
+    background-size: cover;
+    min-height: 400px;
+}
+/*
+.img-gradient {
+  background-color: red;
+  opacity: 0.3;
+  z-index: 1;
+}
+*/
+
+.right-top-banner {
+background: linear-gradient(rgba(83, 65, 71, 0.8), rgba(30, 30, 31, 0.5)), url(../The-Next-Web/img/Crime-Scene.png);
+background-size: cover;
+font-family: Avalon,sans-serif;
+font-weight: 700;
+line-height: 1.1;
+}
+
+.right-top-banner a {
+  color: white;
+  font-size: 22px;
+}
+
+.author a,
+.icon {
+  font-size: 12px;
+  color: white;
+}
+
+.right-bottom-banner {
+  background: linear-gradient(rgba(55, 9, 219, 0.8), rgba(30, 30, 31, 0.5)), url(../The-Next-Web/img/zuckerberg.jpg);
+  background-size: cover;
+  font-family: Avalon,sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.right-bottom-banner a {
+  color: white;
+}
+.author{
+	display: flex;
+	align-items: baseline;
+}
+.right-top-banner i{
+	display: inline-block;
+    color: bisque;
+    /* border: 1px solid black; */
+    font-size: 19px;
+    padding: 0px 10px 10px 10px;
+}
+
+/*===== START latest-news =======*/
+.latest-news a{
+    color: #f42;
+    font-size: 25px;
+}
+
+.bg-img a:nth-child(1){
+    background-image: url(../TNW/img/Switch-Controller.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 75px 150px;
+}
+
+/*======END main======*/
